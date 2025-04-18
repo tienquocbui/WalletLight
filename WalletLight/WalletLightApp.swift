@@ -1,17 +1,15 @@
-//
-//  WalletLightApp.swift
-//  WalletLight
-//
-//  Created by Bùi Tiến Quốc on 10/02/2025.
-//
-
 import SwiftUI
 
 @main
 struct WalletLightApp: App {
+    @StateObject var navigationManager = NavigationManager()
+    @StateObject var walletManager = WalletManager()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(navigationManager)
+                .environmentObject(walletManager)
         }
     }
 }
